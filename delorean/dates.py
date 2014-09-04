@@ -364,3 +364,58 @@ class Delorean(object):
         the Delorean object.
         """
         return self._dt
+
+    @property
+    def day(self):
+        """
+        This method returns the day portion of the datetime object
+        associated with the Delorean object.
+        """
+        return self._dt.day
+
+    @property
+    def month(self):
+        """
+        This method returns the month portion of the datetime object
+        associated with the Delorean object.
+        """
+        return self._dt.month
+
+    @property
+    def year(self):
+        """
+        This method returns the year portion of the datetime object
+        associated with the Delorean object.
+        """
+        return self._dt.year
+
+    @property
+    def hour(self):
+        """
+        This method returns the hour portion of the datetime object
+        associated with the Delorean object.
+        """
+        return self._dt.hour
+
+    @property
+    def minute(self):
+        """
+        This method returns the minute portion of the datetime object
+        associated with the Delorean object.
+        """
+        return self._dt.minute
+
+    @property
+    def second(self):
+        """
+        This method returns the second portion of the datetime object
+        associated with the Delorean object.
+        """
+        return self._dt.second
+
+    def datestring(self, format):
+        """
+        This method returns an strftime string of the datetime object
+        associated with the Delorean object based on user-submitted format.
+        """
+        return datetime.strftime(self._dt, format)

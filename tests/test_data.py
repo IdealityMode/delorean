@@ -503,5 +503,64 @@ class DeloreanTests(TestCase):
         self.assertEqual(d1.timezone(), d2.timezone())
         self.assertEqual(d1, d2)
 
+    def test_return_day(self):
+        """
+        Test that Delorean correctly returns the day portion of the datetime
+        object associated with the Delorean object.
+        """
+        self.assertEqual(self.do.day, self.naive_dt.day)
+
+    def test_return_month(self):
+        """
+        Test that Delorean correctly returns the month portion of the datetime
+        object associated with the Delorean object.
+        """
+        self.assertEqual(self.do.month, self.naive_dt.month)
+
+    def test_return_year(self):
+        """
+        Test that Delorean correctly returns the year portion of the datetime
+        object associated with the Delorean object.
+        """
+        self.assertEqual(self.do.year, self.naive_dt.year)
+
+    def test_return_hour(self):
+        """
+        Test that Delorean correctly returns the hour portion of the datetime
+        object associated with the Delorean object.
+        """
+        self.assertEqual(self.do.hour, self.naive_dt.hour)
+
+    def test_return_minute(self):
+        """
+        Test that Delorean correctly returns the minute portion of the datetime
+        object associated with the Delorean object.
+        """
+        self.assertEqual(self.do.minute, self.naive_dt.minute)
+
+    def test_return_second(self):
+        """
+        Test that Delorean correctly returns the second portion of the datetime
+        object associated with the Delorean object.
+        """
+        self.assertEqual(self.do.second, self.naive_dt.second)
+
+    def test_return_datestring(self):
+        """
+        Test that Delorean correctly returns the datestring associated with a
+        given format.
+        """
+        # test time format; e.g.: 04:31AM
+        my_format = '%I:%M%p'
+        self.assertEqual(
+            self.do.datestring(my_format), datetime.strftime(
+                self.naive_dt, my_format))
+
+        # test date format; e.g.: Monday, January 3, 2013
+        my_format = '%A, %B %d, %Y'
+        self.assertEqual(
+            self.do.datestring(my_format), datetime.strftime(
+                self.naive_dt, my_format))
+
 if __name__ == '__main__':
     main()
